@@ -116,6 +116,10 @@ def pick_movie_off():
     with col3:
          st.title("👁️👁️👁️")
 
+    st.markdown("""
+    ---
+    """)
+
     col6, col7,  = st.columns(2)
     with col6:
         st.write("Movie Title : ", title)
@@ -125,6 +129,9 @@ def pick_movie_off():
     
     with col7:
             st.write("Movie Summary : ")
+    st.markdown("""
+    ---
+    """)
     st.success(title + "  <--  Is the movie to watch")
 
    
