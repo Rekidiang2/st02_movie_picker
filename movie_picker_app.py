@@ -1,4 +1,5 @@
 import streamlit as st
+from helper import home, movi_list, pick_movie_off, pick_movie_on, about, footer, logo
 
 
 # Sidebar Configuration
@@ -15,31 +16,28 @@ st.markdown(
 )
 
 def main():
+    logo()
+    st.sidebar.title("Movie Picker")
     # basic layout
-    menu = ["Home", "Movie List", "Pick Random Movie", "About"]
+    menu = ["Pick Movie", "Movie List", "About"]
     choice = st.sidebar.radio("Menu", menu)
     # siderbar method
     #st.write(dir(st.sidebar))
 
     html_temp = """
     <div style="background-color:blue;padding:0.5px">
-    <h1 style="color:white;text-align:center;">Diabetes Prediction </h1>
+    <h1 style="color:white;text-align:center;">Movie Picker </h1>
     </div><br>"""
     st.markdown(html_temp, unsafe_allow_html=True)
     st.markdown('<style>h1{color: blue;}</style>', unsafe_allow_html=True)
 
-    if choice == "Home":
+    if choice == "Pick Movie":
         #st.title("Home")
-        
-        home()
+        #pick_movie_on()
+        pick_movie_off()
     elif choice == "Movie List":
         st.subheader("Movie Collection")
         movi_list()
-
-    elif choice == "Pick Random Movie":
-        st.header("Pick Random Movie")
-        pick_movie_on()
-        #pick_movie_off()
 
     elif choice == "About":
         #st.title("About")
